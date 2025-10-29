@@ -2,9 +2,6 @@ name: Benchmark Release
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
-      - '!v*.*.*d'
 
 jobs:
   build_linux:
@@ -16,7 +13,7 @@ jobs:
         arch: [DEIGEN_DONT_VECTORIZE, msse2, mavx, mavx2]
         eigenversion: [3.3.4, 3.3.5, 3.3.6, 3.3.7, 3.3.8, 3.3.9, 3.4.0]
         os: [ubuntu-18.04,ubuntu-20.04,ubuntu-22.04]
-    steps:        
+    steps:
     - uses: actions/checkout@v3
     - name: Install dependencies
       run: |
