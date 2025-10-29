@@ -56,7 +56,7 @@ if ( NOT TARGET Eigen3::Eigen )
   endif()
 endif()
 
-# create interface lib for EigenRand to create the programming interface and propagating it simply using target_link_libraries 
+# create interface lib for EigenRand to create the programming interface and propagating it simply using target_link_libraries
 add_library(eigenrand INTERFACE)
 target_link_libraries(eigenrand INTERFACE Eigen3::Eigen)
 
@@ -72,7 +72,7 @@ if ( EIGENRAND_DEFINE_FLAGS )
     set ( CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO}")
     set ( CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO "${CMAKE_EXE_LINKER_FLAGS_RELEASE}" )
   else()
-   
+
 
     set ( CMAKE_C_FLAGS_DEBUG "-DDEBUG -DC_FLAGS -g3 -O0 ${ADDITIONAL_FLAGS}" )
     set ( CMAKE_CXX_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}" )
@@ -119,7 +119,7 @@ endif()
 
 set(FETCHCONTENT_SOURCE_DIR_GOOGLETEST ${CMAKE_CURRENT_SOURCE_DIR}/googletest)
 message(STATUS "FETCHCONTENT_SOURCE_DIR_GOOGLETEST: ${FETCHCONTENT_SOURCE_DIR_GOOGLETEST}")
-FetchContent_Declare(googletest GIT_REPOSITORY https://github.com/google/googletest GIT_TAG v1.8.x)
+FetchContent_Declare(googletest GIT_REPOSITORY https://github.com/google/googletest GIT_TAG v1.14.0)
 
 if(EIGENRAND_BUILD_TEST)
   FetchContent_MakeAvailable(googletest)
